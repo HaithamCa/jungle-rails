@@ -3,7 +3,7 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+<% if cart.size > 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,4 +49,8 @@
     </div>
   </div>
 
-</section>
+  <% else %>
+  <h3>Cart Is Empty!</h3>
+  <%= link_to '🛒 Let\'s get shopping!', root_url, class: 'btn btn-danger' %>
+  <% end %>
+  </section>
