@@ -14,7 +14,7 @@ A mini e-commerce application built with Rails 4.2.
 
 ## Final product
 
-(https://github.com/HaithamCa/jungle-rails/blob/master/Docs/products.png)
-(https://github.com/HaithamCa/jungle-rails/blob/master/Docs/appearel.png)
-(https://github.com/HaithamCa/jungle-rails/blob/master/Docs/my-cart.png)
-(https://github.com/HaithamCa/jungle-rails/blob/master/Docs/order.png)
+![Products page](https://github.com/HaithamCa/jungle-rails/blob/master/Docs/products.png)
+![Appearel](https://github.com/HaithamCa/jungle-rails/blob/master/Docs/appearel.png)
+![User cart](https://github.com/HaithamCa/jungle-rails/blob/master/Docs/my-cart.png)
+![User order](https://github.com/HaithamCa/jungle-rails/blob/master/Docs/order.png)
