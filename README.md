@@ -1,6 +1,6 @@
 # Jungle
 
-A mini e-commerce application built with Rails 4.2.
+E-commerce application built with Rails 4.2.
 
 ## Features
 
