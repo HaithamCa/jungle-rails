@@ -15,3 +15,30 @@ body {
 form.button_to {
   display: inline;
 }
+
+// Signup form
+.signup-form {
+  margin-top: 30px;
+  
+  .feedback-message {
+    margin-top: 8px;
+    font-size: 0.9em;
+    min-height: 20px;
+    
+    &.text-success {
+      color: #3c763d;
+    }
+    
+    &.text-danger {
+      color: #a94442;
+    }
+    
+    i {
+      margin-right: 5px;
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+}

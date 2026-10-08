@@ -5,15 +5,24 @@ class CartsController < ApplicationController
 
   def add_item
     product_id = params[:product_id].to_s
-    modify_cart_delta(product_id, +1)
-
-    redirect_to :back
+    product = Product.find(product_id)
+    
+    current_cart_qty = (cart[product_id] || 0)
+    new_cart_qty = current_cart_qty + 1
+    
+    if product.quantity == 0
+      redirect_to :back, alert: "#{product.name} is sold out."
+    elsif new_cart_qty > product.quantity
+      redirect_to :back, alert: "Sorry, only #{product.quantity} available."
+    else
+      modify_cart_delta(product_id, +1)
+      redirect_to :back
+    end
   end
 
   def remove_item
     product_id = params[:product_id].to_s
     modify_cart_delta(product_id, -1)
-
     redirect_to :back
   end
 
