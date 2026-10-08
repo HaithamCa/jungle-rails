@@ -110,6 +110,7 @@ GEM
     faker (3.6.1)
       i18n (>= 1.8.11, < 2)
     ffi (1.17.4-arm64-darwin)
+    ffi (1.17.4-x86_64-linux-gnu)
     font-awesome-rails (4.7.0.9)
       railties (>= 3.2, < 9.0)
     globalid (1.4.0)
@@ -168,8 +169,11 @@ GEM
     nio4r (2.7.5)
     nokogiri (1.18.10-arm64-darwin)
       racc (~> 1.4)
+    nokogiri (1.18.10-x86_64-linux-gnu)
+      racc (~> 1.4)
     observer (0.1.2)
     pg (1.7.0-arm64-darwin)
+    pg (1.7.0-x86_64-linux)
     pkg-config (1.6.5)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
@@ -286,6 +290,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-22
+  x86_64-linux
 
 DEPENDENCIES
   bcrypt (~> 3.1.7)
