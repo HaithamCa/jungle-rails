@@ -40,8 +40,9 @@ Once the blueprint is created, go to your web service settings and add:
   - Start the app
 
 #### 5. Access Your App
-- Your app will be live at: `https://jungle-rails-XXXX.onrender.com`
+- Your app will be live at: `https://your-app-name.onrender.com`
 - Render provides a free SSL certificate automatically
+- Find your exact URL in the Render dashboard under your service name
 
 ---
 
@@ -118,5 +119,5 @@ Perfect for showing:
 
 ---
 
-**Live URL:** https://jungle-rails-XXXX.onrender.com _(update after deployment)_  
+**Live URL:** _Get from Render dashboard after deployment_  
 **GitHub:** https://github.com/HaithamCa/jungle-rails
