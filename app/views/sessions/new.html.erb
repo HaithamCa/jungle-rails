@@ -1,9 +1,31 @@
-<h1>Login</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <div class="auth-form-container">
+        <div class="auth-header">
+          <i class="fa fa-sign-in"></i>
+          <h1>Welcome Back</h1>
+          <p>Sign in to your account</p>
+        </div>
 
-<%= form_tag '/login' do %>
+        <%= form_tag '/login', class: 'auth-form' do %>
+          <div class="form-group">
+            <%= label_tag :email %>
+            <%= text_field_tag :email, nil, class: 'form-control', required: true, placeholder: 'you@example.com', autofocus: true %>
+          </div>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+          <div class="form-group">
+            <%= label_tag :password %>
+            <%= password_field_tag :password, nil, class: 'form-control', required: true, placeholder: 'Enter your password' %>
+          </div>
 
-<% end %>
+          <%= submit_tag "Sign In", class: 'btn btn-primary btn-lg btn-block' %>
+        <% end %>
+
+        <p class="text-center auth-footer">
+          Don't have an account? <%= link_to 'Sign up', '/signup' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

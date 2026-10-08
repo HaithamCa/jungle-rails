@@ -50,7 +50,13 @@
   </div>
 
   <% else %>
-  <h3>Cart Is Empty!</h3>
-  <%= link_to '🛒 Let\'s get shopping!', root_url, class: 'btn btn-danger' %>
+  <div class="empty-cart">
+    <i class="fa fa-shopping-cart" style="font-size: 4rem; color: var(--color-text-tertiary);"></i>
+    <h3>Your Cart Is Empty</h3>
+    <p>Looks like you haven't added anything to your cart yet.</p>
+    <%= link_to root_url, class: 'btn btn-primary btn-lg' do %>
+      <%= fa_icon 'shopping-cart' %> Start Shopping
+    <% end %>
+  </div>
   <% end %>
   </section>

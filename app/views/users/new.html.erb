@@ -1,9 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h1>Sign Up</h1>
+      <div class="auth-form-container">
+        <div class="auth-header">
+          <i class="fa fa-user-plus"></i>
+          <h1>Create Account</h1>
+          <p>Join us today</p>
+        </div>
 
-      <%= form_for :user, url: '/users', html: { class: 'signup-form' } do |f| %>
+        <%= form_for :user, url: '/users', html: { class: 'signup-form auth-form' } do |f| %>
         <div class="form-group">
           <%= f.label :name %>
           <%= f.text_field :name, class: 'form-control', required: true, placeholder: 'Enter your name' %>
@@ -26,12 +31,13 @@
           <div id="password-match-feedback" class="feedback-message"></div>
         </div>
 
-        <%= f.submit "Create Account", class: 'btn btn-primary btn-lg btn-block', id: 'signup-submit' %>
-      <% end %>
+          <%= f.submit "Create Account", class: 'btn btn-primary btn-lg btn-block', id: 'signup-submit' %>
+        <% end %>
 
-      <p class="text-center" style="margin-top: 20px;">
-        Already have an account? <%= link_to 'Log in', '/login' %>
-      </p>
+        <p class="text-center auth-footer">
+          Already have an account? <%= link_to 'Log in', '/login' %>
+        </p>
+      </div>
     </div>
   </div>
 </div>
