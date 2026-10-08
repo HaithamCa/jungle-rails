@@ -6,6 +6,11 @@ RSpec.describe User, type: :model do
     expect(@user).to be_valid, @user.errors.full_messages
   end
 
+  it 'is not an admin by default' do
+    @user = User.new(name: "name", email: "test@test.com", password: "password", password_confirmation: "password")
+    expect(@user.admin).to eq(false)
+  end
+
   it 'it not valid without a name' do
     @user = User.new( email: "test@test.com", password: "test", password_confirmation: "test")
     expect(@user).to_not be_valid

@@ -34,4 +34,15 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
+  def require_admin
+    return if current_user && current_user.admin?
+
+    if current_user
+      redirect_to root_path, alert: "You do not have access to the admin area."
+    else
+      session[:return_to] = request.fullpath
+      redirect_to "/login", alert: "Log in with an admin account to continue."
+    end
+  end
+
 end

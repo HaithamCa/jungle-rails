@@ -133,4 +133,17 @@ cat3.products.create!({
 })
 
 
+puts "Finding or Creating Admin ..."
+
+admin = User.find_or_initialize_by(email: "admin@jungle.test")
+if admin.new_record?
+  admin.name = "Admin"
+  admin.password = "password"
+  admin.password_confirmation = "password"
+  admin.admin = true
+  admin.save!
+else
+  admin.update_column(:admin, true)
+end
+
 puts "DONE!"

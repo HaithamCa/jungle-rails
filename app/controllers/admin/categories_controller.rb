@@ -1,5 +1,5 @@
 class Admin::CategoriesController < ApplicationController
-  http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD']
+  before_action :require_admin
 
   def index
     @categories = Category.order(:name)

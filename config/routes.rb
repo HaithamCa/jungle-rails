@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  namespace :admin do
-    resources :categories
-  end
   root to: 'products#index'
   
   resource :about, only: [:show]

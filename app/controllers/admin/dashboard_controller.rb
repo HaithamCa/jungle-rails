@@ -1,8 +1,8 @@
 class Admin::DashboardController < ApplicationController
-  http_basic_authenticate_with name: ENV['USERNAME'], password: ENV['PASSWORD']
+  before_action :require_admin
 
   def show
-    @Product_count = Product.count
+    @product_count = Product.count
     @category_count = Category.count
   end
 end
