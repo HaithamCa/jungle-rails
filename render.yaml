@@ -1,0 +1,25 @@
+databases:
+  - name: jungle-rails-db
+    databaseName: jungle_rails_production
+    user: jungle_rails
+    region: oregon
+
+services:
+  - type: web
+    name: jungle-rails
+    runtime: ruby
+    region: oregon
+    plan: free
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: jungle-rails-db
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: STRIPE_PUBLISHABLE_KEY
+        sync: false
+      - key: STRIPE_SECRET_KEY
+        sync: false
