@@ -340,21 +340,15 @@ form.button_to {
     margin-top: 8px;
     margin-left: 4px;
     background-color: var(--color-primary);
-    color: #ffffff !important;
+    color: var(--color-text-inverse) !important;
     border-radius: var(--radius-md);
     font-weight: 600;
     line-height: 1.5;
-    position: relative;
-    z-index: 100;
     
-    &:hover {
-      background-color: var(--color-primary-hover);
-      color: #ffffff !important;
+    &:hover, &:focus {
+      background-color: var(--color-primary-hover) !important;
+      color: var(--color-text-inverse) !important;
       text-decoration: none;
-    }
-    
-    &:focus {
-      color: #ffffff !important;
     }
     
     @media (max-width: 767px) {
