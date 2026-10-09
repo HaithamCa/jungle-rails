@@ -13,12 +13,6 @@ def open_asset(file_name)
   File.open(Rails.root.join('db', 'seed_assets', file_name))
 end
 
-# Only run on development (local) instances not on production, etc.
-unless Rails.env.development?
-  puts "Development seeds only (for now)!"
-  exit 0
-end
-
 # Let's do this ...
 
 ## CATEGORIES
@@ -31,106 +25,103 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 ## PRODUCTS
 
-puts "Re-creating Products ..."
+puts "Finding or Creating Products ..."
 
-Product.destroy_all
+Product.find_or_create_by!(name: 'Men\'s Classy shirt') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('apparel1.jpg')
+  product.quantity = 10
+  product.price = 64.99
+  product.category = cat1
+end
 
-cat1.products.create!({
-  name:  'Men\'s Classy shirt',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel1.jpg'),
-  quantity: 10,
-  price: 64.99
-})
+Product.find_or_create_by!(name: 'Women\'s Zebra pants') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('apparel2.jpg')
+  product.quantity = 18
+  product.price = 124.99
+  product.category = cat1
+end
 
-cat1.products.create!({
-  name:  'Women\'s Zebra pants',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel2.jpg'),
-  quantity: 18,
-  price: 124.99
-})
+Product.find_or_create_by!(name: 'Hipster Hat') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('apparel3.jpg')
+  product.quantity = 4
+  product.price = 34.49
+  product.category = cat1
+end
 
-cat1.products.create!({
-  name:  'Hipster Hat',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel3.jpg'),
-  quantity: 4,
-  price: 34.49
-})
+Product.find_or_create_by!(name: 'Hipster Socks') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('apparel4.jpg')
+  product.quantity = 8
+  product.price = 25.00
+  product.category = cat1
+end
 
-cat1.products.create!({
-  name:  'Hipster Socks',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel4.jpg'),
-  quantity: 8,
-  price: 25.00
-})
+Product.find_or_create_by!(name: 'Russian Spy Shoes') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('apparel5.jpg')
+  product.quantity = 8
+  product.price = 1_225.00
+  product.category = cat1
+end
 
-cat1.products.create!({
-  name:  'Russian Spy Shoes',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel5.jpg'),
-  quantity: 8,
-  price: 1_225.00
-})
+Product.find_or_create_by!(name: 'Human Feet Shoes') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('apparel6.jpg')
+  product.quantity = 82
+  product.price = 224.50
+  product.category = cat1
+end
 
-cat1.products.create!({
-  name:  'Human Feet Shoes',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel6.jpg'),
-  quantity: 82,
-  price: 224.50
-})
+Product.find_or_create_by!(name: 'Modern Skateboards') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('electronics1.jpg')
+  product.quantity = 40
+  product.price = 164.49
+  product.category = cat2
+end
 
+Product.find_or_create_by!(name: 'Hotdog Slicer') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('electronics2.jpg')
+  product.quantity = 3
+  product.price = 26.00
+  product.category = cat2
+end
 
-cat2.products.create!({
-  name:  'Modern Skateboards',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('electronics1.jpg'),
-  quantity: 40,
-  price: 164.49
-})
+Product.find_or_create_by!(name: 'World\'s Largest Smartwatch') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('electronics3.jpg')
+  product.quantity = 32
+  product.price = 2_026.29
+  product.category = cat2
+end
 
-cat2.products.create!({
-  name:  'Hotdog Slicer',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('electronics2.jpg'),
-  quantity: 3,
-  price: 26.00
-})
+Product.find_or_create_by!(name: 'Optimal Sleeping Bed') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('furniture1.jpg')
+  product.quantity = 320
+  product.price = 3_052.00
+  product.category = cat3
+end
 
-cat2.products.create!({
-  name:  'World\'s Largest Smartwatch',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('electronics3.jpg'),
-  quantity: 32,
-  price: 2_026.29
-})
+Product.find_or_create_by!(name: 'Electric Chair') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('furniture2.jpg')
+  product.quantity = 2
+  product.price = 987.65
+  product.category = cat3
+end
 
-cat3.products.create!({
-  name:  'Optimal Sleeping Bed',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture1.jpg'),
-  quantity: 320,
-  price: 3_052.00
-})
-
-cat3.products.create!({
-  name:  'Electric Chair',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture2.jpg'),
-  quantity: 2,
-  price: 987.65
-})
-
-cat3.products.create!({
-  name:  'Red Bookshelf',
-  description: Faker::Hipster.paragraph(4),
-  image: open_asset('furniture3.jpg'),
-  quantity: 0,
-  price: 2_483.75
-})
+Product.find_or_create_by!(name: 'Red Bookshelf') do |product|
+  product.description = Faker::Hipster.paragraph(4)
+  product.image = open_asset('furniture3.jpg')
+  product.quantity = 0
+  product.price = 2_483.75
+  product.category = cat3
+end
 
 
 puts "Finding or Creating Admin ..."
