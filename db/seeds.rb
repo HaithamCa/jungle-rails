@@ -28,7 +28,7 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 puts "Finding or Creating Products ..."
 
 Product.find_or_create_by!(name: 'Men\'s Classy shirt') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('apparel1.jpg')
   product.quantity = 10
   product.price = 64.99
@@ -36,7 +36,7 @@ Product.find_or_create_by!(name: 'Men\'s Classy shirt') do |product|
 end
 
 Product.find_or_create_by!(name: 'Women\'s Zebra pants') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('apparel2.jpg')
   product.quantity = 18
   product.price = 124.99
@@ -44,7 +44,7 @@ Product.find_or_create_by!(name: 'Women\'s Zebra pants') do |product|
 end
 
 Product.find_or_create_by!(name: 'Hipster Hat') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('apparel3.jpg')
   product.quantity = 4
   product.price = 34.49
@@ -52,7 +52,7 @@ Product.find_or_create_by!(name: 'Hipster Hat') do |product|
 end
 
 Product.find_or_create_by!(name: 'Hipster Socks') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('apparel4.jpg')
   product.quantity = 8
   product.price = 25.00
@@ -60,7 +60,7 @@ Product.find_or_create_by!(name: 'Hipster Socks') do |product|
 end
 
 Product.find_or_create_by!(name: 'Russian Spy Shoes') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('apparel5.jpg')
   product.quantity = 8
   product.price = 1_225.00
@@ -68,7 +68,7 @@ Product.find_or_create_by!(name: 'Russian Spy Shoes') do |product|
 end
 
 Product.find_or_create_by!(name: 'Human Feet Shoes') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('apparel6.jpg')
   product.quantity = 82
   product.price = 224.50
@@ -76,7 +76,7 @@ Product.find_or_create_by!(name: 'Human Feet Shoes') do |product|
 end
 
 Product.find_or_create_by!(name: 'Modern Skateboards') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('electronics1.jpg')
   product.quantity = 40
   product.price = 164.49
@@ -84,7 +84,7 @@ Product.find_or_create_by!(name: 'Modern Skateboards') do |product|
 end
 
 Product.find_or_create_by!(name: 'Hotdog Slicer') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('electronics2.jpg')
   product.quantity = 3
   product.price = 26.00
@@ -92,7 +92,7 @@ Product.find_or_create_by!(name: 'Hotdog Slicer') do |product|
 end
 
 Product.find_or_create_by!(name: 'World\'s Largest Smartwatch') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('electronics3.jpg')
   product.quantity = 32
   product.price = 2_026.29
@@ -100,7 +100,7 @@ Product.find_or_create_by!(name: 'World\'s Largest Smartwatch') do |product|
 end
 
 Product.find_or_create_by!(name: 'Optimal Sleeping Bed') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('furniture1.jpg')
   product.quantity = 320
   product.price = 3_052.00
@@ -108,7 +108,7 @@ Product.find_or_create_by!(name: 'Optimal Sleeping Bed') do |product|
 end
 
 Product.find_or_create_by!(name: 'Electric Chair') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('furniture2.jpg')
   product.quantity = 2
   product.price = 987.65
@@ -116,7 +116,7 @@ Product.find_or_create_by!(name: 'Electric Chair') do |product|
 end
 
 Product.find_or_create_by!(name: 'Red Bookshelf') do |product|
-  product.description = Faker::Hipster.paragraph(4)
+  product.description = Faker::Hipster.paragraph(sentence_count: 4)
   product.image = open_asset('furniture3.jpg')
   product.quantity = 0
   product.price = 2_483.75
