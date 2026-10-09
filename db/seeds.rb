@@ -27,100 +27,136 @@ cat3 = Category.find_or_create_by! name: 'Furniture'
 
 puts "Finding or Creating Products ..."
 
-Product.find_or_create_by!(name: 'Men\'s Classy shirt') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Men\'s Classy shirt') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 10
+  p.price = 64.99
+  p.category = cat1
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('apparel1.jpg')
-  product.quantity = 10
-  product.price = 64.99
-  product.category = cat1
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Women\'s Zebra pants') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Women\'s Zebra pants') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 18
+  p.price = 124.99
+  p.category = cat1
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('apparel2.jpg')
-  product.quantity = 18
-  product.price = 124.99
-  product.category = cat1
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Hipster Hat') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Hipster Hat') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 4
+  p.price = 34.49
+  p.category = cat1
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('apparel3.jpg')
-  product.quantity = 4
-  product.price = 34.49
-  product.category = cat1
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Hipster Socks') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Hipster Socks') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 8
+  p.price = 25.00
+  p.category = cat1
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('apparel4.jpg')
-  product.quantity = 8
-  product.price = 25.00
-  product.category = cat1
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Russian Spy Shoes') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Russian Spy Shoes') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 8
+  p.price = 1_225.00
+  p.category = cat1
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('apparel5.jpg')
-  product.quantity = 8
-  product.price = 1_225.00
-  product.category = cat1
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Human Feet Shoes') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Human Feet Shoes') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 82
+  p.price = 224.50
+  p.category = cat1
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('apparel6.jpg')
-  product.quantity = 82
-  product.price = 224.50
-  product.category = cat1
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Modern Skateboards') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Modern Skateboards') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 40
+  p.price = 164.49
+  p.category = cat2
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('electronics1.jpg')
-  product.quantity = 40
-  product.price = 164.49
-  product.category = cat2
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Hotdog Slicer') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Hotdog Slicer') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 3
+  p.price = 26.00
+  p.category = cat2
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('electronics2.jpg')
-  product.quantity = 3
-  product.price = 26.00
-  product.category = cat2
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'World\'s Largest Smartwatch') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'World\'s Largest Smartwatch') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 32
+  p.price = 2_026.29
+  p.category = cat2
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('electronics3.jpg')
-  product.quantity = 32
-  product.price = 2_026.29
-  product.category = cat2
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Optimal Sleeping Bed') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Optimal Sleeping Bed') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 320
+  p.price = 3_052.00
+  p.category = cat3
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('furniture1.jpg')
-  product.quantity = 320
-  product.price = 3_052.00
-  product.category = cat3
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Electric Chair') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Electric Chair') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 2
+  p.price = 987.65
+  p.category = cat3
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('furniture2.jpg')
-  product.quantity = 2
-  product.price = 987.65
-  product.category = cat3
+  product.save!
 end
 
-Product.find_or_create_by!(name: 'Red Bookshelf') do |product|
-  product.description = Faker::Hipster.paragraph(sentence_count: 4)
+product = Product.find_or_create_by!(name: 'Red Bookshelf') do |p|
+  p.description = Faker::Hipster.paragraph(sentence_count: 4)
+  p.quantity = 0
+  p.price = 2_483.75
+  p.category = cat3
+end
+if product.image.file.nil? || !File.exist?(product.image.path)
   product.image = open_asset('furniture3.jpg')
-  product.quantity = 0
-  product.price = 2_483.75
-  product.category = cat3
+  product.save!
 end
 
 
