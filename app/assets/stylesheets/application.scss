@@ -344,9 +344,16 @@ form.button_to {
     border-radius: var(--radius-md);
     font-weight: 600;
     line-height: 1.5;
+    position: relative;
+    z-index: 100;
     
     &:hover {
       background-color: var(--color-primary-hover);
+      color: var(--color-text-inverse) !important;
+      text-decoration: none;
+    }
+    
+    &:focus {
       color: var(--color-text-inverse) !important;
     }
     

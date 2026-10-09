@@ -56,7 +56,7 @@
         </li>
         <li>
           <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> Cart (<%= cart.size %>)
+            <%= fa_icon "shopping-cart" %> Cart (<%= cart.keys.size %>)
           <% end %>
         </li>
         <% if current_user %>
