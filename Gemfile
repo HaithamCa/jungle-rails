@@ -3,6 +3,8 @@ ruby "3.1.4"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.0'
+# Rails 6.1 breaks with concurrent-ruby 1.3.5+ (missing Logger require)
+gem 'concurrent-ruby', '< 1.3.5'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use SCSS for stylesheets
