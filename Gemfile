@@ -5,6 +5,7 @@ ruby "3.1.4"
 gem 'rails', '~> 6.1.0'
 # Rails 6.1 breaks with concurrent-ruby 1.3.5+ (missing Logger require)
 gem 'concurrent-ruby', '< 1.3.5'
+gem 'json', '< 3'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use SCSS for stylesheets
